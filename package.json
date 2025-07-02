@@ -1,6 +1,6 @@
 {
   "name": "payra-crm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Desktop CRM software for education recruitment consultants",
   "main": "index.html",
   "scripts": {
