@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Phone, MapPin, Clock, AlertCircle, Users, Star, History, MessageSquare } from 'lucide-react'
+import { ArrowLeft, Phone, MapPin, Clock, Star, History, MessageSquare } from 'lucide-react'
 import { mockSchools, mockCandidates } from '../../data/mockData'
 import { School, Candidate, CallNote } from '../../types'
 import SearchInput from '../common/SearchInput'
@@ -100,15 +100,6 @@ const CallSchoolsView: React.FC<CallSchoolsViewProps> = ({ onBack }) => {
 
   // Simple distance calculation based on location names (mock implementation)
   const getLocationDistance = (school: School, candidate: Candidate): number => {
-    // Mock distance calculation - in a real app, you'd use actual coordinates
-    const locationMappings: { [key: string]: { lat: number, lng: number } } = {
-      'Central London': { lat: 51.5074, lng: -0.1278 },
-      'North London': { lat: 51.5641, lng: -0.1408 },
-      'South London': { lat: 51.4545, lng: -0.1008 },
-      'East London': { lat: 51.5154, lng: 0.0048 },
-      'West London': { lat: 51.5074, lng: -0.2417 },
-    }
-    
     // Default distances based on postcodes and areas
     const schoolPostcode = school.postcode.split(' ')[0]
     const candidateLocation = candidate.location

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Building, Phone, Mail, Calendar, CheckCircle, Clock, AlertTriangle } from 'lucide-react'
+import { ArrowLeft, Building, Phone, Mail, CheckCircle, Clock, AlertTriangle } from 'lucide-react'
 import { mockSchools } from '../../data/mockData'
 import { School } from '../../types'
 

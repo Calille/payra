@@ -10,13 +10,9 @@ import {
   Video,
   CheckCircle,
   AlertCircle,
-  Plus,
-  Filter,
-  ChevronLeft,
-  ChevronRight
+  Plus
 } from 'lucide-react'
 import { mockBookings } from '../../data/mockData'
-import { Booking } from '../../types'
 import SearchInput from '../common/SearchInput'
 import StatusBadge from '../common/StatusBadge'
 import EmptyState from '../common/EmptyState'
@@ -29,7 +25,7 @@ const BookingsView: React.FC<BookingsViewProps> = ({ onBack }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [filterType, setFilterType] = useState<string>('all')
   const [filterStatus, setFilterStatus] = useState<string>('all')
-  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0])
+
   const [activeTab, setActiveTab] = useState<'upcoming' | 'outstanding' | 'past'>('upcoming')
 
   const filteredBookings = useMemo(() => {
@@ -94,17 +90,7 @@ const BookingsView: React.FC<BookingsViewProps> = ({ onBack }) => {
     })
   }
 
-  const getNextDay = () => {
-    const next = new Date(selectedDate)
-    next.setDate(next.getDate() + 1)
-    return next.toISOString().split('T')[0]
-  }
 
-  const getPrevDay = () => {
-    const prev = new Date(selectedDate)
-    prev.setDate(prev.getDate() - 1)
-    return prev.toISOString().split('T')[0]
-  }
 
   const today = new Date().toISOString().split('T')[0]
   const upcomingBookings = mockBookings.filter(booking => booking.date >= today && booking.status !== 'cancelled')
